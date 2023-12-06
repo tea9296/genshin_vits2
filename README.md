@@ -60,6 +60,9 @@ pip install -r requirements.txt
 # Start
 1.可更改config.json中設定，如主角語音(main_character)、預設角色語音(default_character)、截圖按鍵("key_press")。
 
+<br/>
+
+角色語音列表可至"vits2/models/genshin/spks.json"查看
 
 <br/>
 <br/>
@@ -79,8 +82,11 @@ python main.py
 
 
 
-3. 看到"start listening...."表示啟動成功，可以開始使用，在遊戲中欲將對話轉成語音時，按下截圖按鍵(預設截圖按鍵為"scroll_lock")便會將對話文字根據角色轉成語音並播出，按下"esc"鍵結束程式。
+3. 看到"start listening...."表示啟動成功，可以開始使用，在遊戲中欲將對話轉成語音時，按下截圖按鍵(預設截圖按鍵為"space")便會將對話文字根據角色轉成語音並播出，按下"scroll lock"鍵結束程式。
 
+<br/>
+
+(scroll lock鍵為Home鍵上面那顆)
 <br/>
 <br/>
 <br/>

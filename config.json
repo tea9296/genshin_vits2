@@ -3,7 +3,7 @@
     "main_character": "派蒙",
     "default_character": "八重神子",
     "language": "ch_tra",
-    "key_press": "scroll_lock",  
+    "key_press": "space",  
     "model_config_path": "./models/genshin/"
 
 

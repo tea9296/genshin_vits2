@@ -94,7 +94,7 @@ def on_press(key):
             print(e, "\n")
             
         delete_old_temp_files(PATH)  ## delete old files in the tmp folder
-    if key == keyboard.Key.esc:
+    if key == keyboard.Key.scroll_lock:
         # Stop listener
         return False
 
@@ -206,6 +206,6 @@ def delete_old_temp_files(path:str):
 
 # Start the listener
 with keyboard.Listener(on_press=on_press) as listener:
-    print(f"\n\npress {KEY_PRESS} to start, esc to exit.\n\n")
+    print(f"\n\npress \'{KEY_PRESS}\' to start, press \'scroll\' lock to exit.\n\n")
     print("start listening....\n\n")
     listener.join()
