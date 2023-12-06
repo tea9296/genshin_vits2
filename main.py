@@ -14,12 +14,30 @@ config_path = "../config.json"
 
 
 
+def get_character_sim(model_config_path:str)->dict:
+    """get the character similarity from the model config file
+
+    Args:
+        model_config_path (str): path to the model config file
+
+    Returns:
+        dict: character similarity
+    """
+    spk_list = Path(model_config_path + "spks.json").read_text(encoding="utf-8")
+    speakers = json.loads(spk_list)
+    ret = {}
+    
+    for speaker in speakers:
+        ret[convert(speaker,'zh-hant')] = speaker
+    
+    return ret
+
 
 
 def load_config():
     """setting the global variables from the config file
     """
-    global config_path, PATH, MAIN_CHARACTER, KEY_PRESS, reader, model
+    global config_path, PATH, MAIN_CHARACTER, KEY_PRESS, CHA_SIM_DICT, reader, model
     with open(config_path, 'r', encoding='utf-8') as f:
         config = json.load(f)
 
@@ -27,6 +45,7 @@ def load_config():
     MAIN_CHARACTER = convert(config["main_character"], 'zh-cn')
     KEY_PRESS = config["key_press"]
     LANGUAGE = config["language"]     
+    CHA_SIM_DICT = get_character_sim(config["model_config_path"])
     Path(PATH).mkdir(parents=True, exist_ok=True)
     reader = easyocr.Reader([LANGUAGE,'en'], gpu=True)
     model = inf.vits2(default_spearker = convert(config["default_character"], 'zh-cn'), model_config_path = config["model_config_path"], tmp_path = PATH)
@@ -51,7 +70,9 @@ def on_press(key):
         filename, width, height = take_screenshot()
         try:
             main_text, npc_text, npc_name = ocr(filename, width, height)
-            npc_name = convert(npc_name, 'zh-cn')
+            if npc_name in CHA_SIM_DICT:
+                npc_name = CHA_SIM_DICT[npc_name]
+                
             
             ### generate npc wav file and play it ###
             if npc_text != "":
