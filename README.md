@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 
 # Start
-1.可更改config.json中設定，如主角語音(main_character)、預設角色語音(default_character)、截圖按鍵("key_press")。
+1. 可更改config.json中設定，如主角語音(main_character)、預設角色語音(default_character)、截圖按鍵("key_press")。
 
 <br/>
 
