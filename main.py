@@ -128,14 +128,14 @@ def take_screenshot()->(str,int,int):
 
     # Calculate the region of the lower half of the screen
     
-    region = (0, screen_height // 3, screen_width, screen_height )
+    region = (0, screen_height // 2, screen_width, screen_height )
     # Take a screenshot of the lower half of the screen
     screenshot = pyautogui.screenshot(region=region)
     width, height = screenshot.size
     # Save the screenshot
     screenshot.save(new_file_path)
     
-    return new_file_path, width, height*2//3
+    return new_file_path, width, height//2
 
 
 
@@ -206,6 +206,6 @@ def delete_old_temp_files(path:str):
 
 # Start the listener
 with keyboard.Listener(on_press=on_press) as listener:
-    print(f"\n\npress \'{KEY_PRESS}\' to start, press \'scroll\' lock to exit.\n\n")
+    print(f"\n\npress \'{KEY_PRESS}\' to start, press \'scroll lock\' to exit.\n\n")
     print("start listening....\n\n")
     listener.join()
