@@ -1,0 +1,9 @@
+# Ignore the whole directory
+vits2/*
+
+# But do not ignore inf.py
+!vits2/inf.py
+
+
+__pycache__/
+原神&星穹合成_20231105.7z
