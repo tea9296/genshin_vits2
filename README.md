@@ -87,10 +87,21 @@ python main.py
 <br/>
 
 (scroll lock鍵為Home鍵上面那顆)
+
 <br/>
 <br/>
 <br/>
 <br/>
 
 
-4. [demo](https://youtu.be/a5nEUCBoJ44)
+# Demo
+
+1. [原神demo1](https://youtu.be/a5nEUCBoJ44)
+
+
+<br/>
+<br/>
+
+
+2. [鐵道demo1](https://youtu.be/ox1HHaMJ2V0)
+
