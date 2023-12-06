@@ -161,7 +161,7 @@ def ocr(filepath:str, width:int, height:int):
         count += 1
     
     ## skip description of character
-    if count < len(result) and result[count][0][0][0] > width*2//5:
+    if count < len(result) and result[count][0][0][0] > width//2:
         #print("person title: ", result[count][1])
         count += 1
     
